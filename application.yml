@@ -1,0 +1,46 @@
+###############################
+# 모든 서비스에 공통으로 적용되는 설정 #
+###############################
+
+# MONITORING ---------------------------------------------
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+
+# SPRING --------------------------------------------------
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+
+# LOGGING --------------------------------------------------
+logging:
+  level:
+    root: INFO
+    com.ezmeal: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name:}, traceId=%X{traceId:-}, spanId=%X{spanId:-}]"
