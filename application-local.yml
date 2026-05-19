@@ -23,6 +23,9 @@ spring:
     hibernate:
       ddl-auto: update
 
+  kafka:
+    bootstrap-servers: kafka:9092
+
 # MONITORING -----------------------------------------------
 management:
   # application.yml의 'health, info, prometheus' 설정을 덮어쓰고 모든 엔드포인트 개방

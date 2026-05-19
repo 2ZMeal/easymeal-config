@@ -9,7 +9,7 @@ eureka:
 
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://10.0.10.80:8761/eureka
 
 # SPRING --------------------------------------------------
 spring:
@@ -17,6 +17,9 @@ spring:
     hibernate:
       # 운영 안정성 등을 고려하여 배포 또는 테스트환경에서 DB가 변경되지 않고 검증만 하도록 합니다.
       ddl-auto: update
+
+  kafka:
+    bootstrap-servers: 10.0.10.80:9092
 
 # MONITORING -----------------------------------------------
 management:
@@ -35,4 +38,4 @@ management:
 
   zipkin:
     tracing:
-      endpoint: http://zipkin:9411/api/v2/spans
+      endpoint: http://10.0.10.80:9411/api/v2/spans

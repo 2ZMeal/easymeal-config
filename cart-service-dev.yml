@@ -4,5 +4,4 @@ spring:
     username: cart_user
     password: ${CART_DB_PASSWORD:1234}
     driver-class-name: org.postgresql.Driver
-  kafka:
-    bootstrap-servers: kafka:9092
+
