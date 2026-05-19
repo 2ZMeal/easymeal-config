@@ -18,3 +18,8 @@ spring:
 # KEYCLOAK -----------------------------------------------------------------
 keycloak:
   auth-server-url: http://10.0.10.80:8180
+
+# EUREKA
+eureka:
+  instance:
+    non-secure-port: 19081

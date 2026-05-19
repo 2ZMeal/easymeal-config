@@ -6,6 +6,8 @@
 eureka:
   instance:
     prefer-ip-address: true
+    ip-address: ${EUREKA_INSATANCE_IP_ADDRESS}
+    instance-id: ${spring.application.name}:${EUREKA_INSTANCE_IP_ADDRESS}:${server.port}
 
   client:
     service-url:
