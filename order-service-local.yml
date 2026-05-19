@@ -6,3 +6,15 @@ spring:
     driver-class-name: org.postgresql.Driver
   kafka:
     bootstrap-servers: localhost:9092
+
+
+  zipkin:
+    enabled: false  # 로컬에서 Zipkin 서버 없이 실행할 때
+
+
+# 타 MSA 서비스 URL (Eureka 사용 시 서비스명으로 대체 가능)
+services:
+  company:
+    url: ${STORE_SERVICE_URL:http://company-service:19082}
+  product:
+    url: ${PRODUCT_SERVICE_URL:http://product-service:19083}

@@ -6,3 +6,9 @@ spring:
     driver-class-name: org.postgresql.Driver
   kafka:
     bootstrap-servers: kafka:9092
+
+services:
+  company:
+    url: ${STORE_SERVICE_URL:http://company-service:19082}
+  product:
+    url: ${PRODUCT_SERVICE_URL:http://product-service:19083}
