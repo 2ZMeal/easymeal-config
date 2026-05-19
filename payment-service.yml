@@ -8,3 +8,18 @@ spring:
     consumer:
       group-id: payment-group
       auto-offset-reset: earliest
+
+
+payment:
+  toss:
+    url: https://api.tosspayments.com/v1/payments
+    secret-key: ${TOSS_SECRET_KEY:dummy-toss-secret}
+    client-key: ${TOSS_CLIENT_KEY:dummy-toss-client}
+
+  nicepay:
+    name: NICEPAY
+    api-url: https://api.nicepay.co.kr/v1/payments
+    sandbox-url: https://sandbox-api.nicepay.co.kr/v1/payments
+    client-key: ${NICEPAY_CLIENT_KEY:dummy-nicepay-client}
+    secret-key: ${NICEPAY_SECRET_KEY:dummy-nicepay-secret}
+    sandbox: true
