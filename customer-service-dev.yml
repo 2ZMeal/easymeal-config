@@ -4,3 +4,8 @@ spring:
     username: customer_user
     password: ${CUSTOMER_DB_PASSWORD:1234}
     driver-class-name: org.postgresql.Driver
+
+# EUREKA
+eureka:
+  instance:
+    non-secure-port: 19090

@@ -19,3 +19,8 @@ spring:
           auth: true
           starttls:
             enable: true
+
+# EUREKA
+eureka:
+  instance:
+    non-secure-port: 19088
