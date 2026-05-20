@@ -10,3 +10,10 @@ spring:
       auto-offset-reset: earliest
   elasticsearch:
     uris: ${PRODUCT_ELASTICSEARCH_URIS:http://localhost:9200}
+
+cloud:
+  aws:
+    region: ${AWS_REGION:ap-northeast-2}
+    s3:
+      bucket: ${PRODUCT_S3_BUCKET:easymeal-dev-assets}
+      image-base-url: ${PRODUCT_IMAGE_BASE_URL:http://localhost:19083/mock-images}

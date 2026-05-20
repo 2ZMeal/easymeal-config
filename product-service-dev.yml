@@ -9,3 +9,8 @@ spring:
 eureka:
   instance:
     non-secure-port: 19083
+
+cloud:
+  aws:
+    s3:
+      bucket: ${PRODUCT_S3_BUCKET:easymeal-dev-assets}
